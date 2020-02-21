@@ -1,0 +1,32 @@
+{
+  "name": "node-express",
+  "version": "1.0.0",
+  "description": "boilerplate for REST API server with node and express",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "keywords": [
+    "boilerplate",
+    "node boilerplate",
+    "node express boilerplate",
+    "es6"
+  ],
+  "author": "Abhijeet <ab.progr@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.21.2",
+    "morgan": "^1.9.1",
+    "node-uuid": "^1.4.8",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2"
+  }
+}
