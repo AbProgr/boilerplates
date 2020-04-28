@@ -1,9 +1,5 @@
 {
   "restartable": "rs",
-  "ignore": [
-    ".git",
-    "node_modules/**/node_modules",
-    "test"
-  ],
+  "ignore": [".git", "node_modules/**/node_modules", "test"],
   "ext": "js json"
 }

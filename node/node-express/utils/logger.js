@@ -1,8 +1,10 @@
-const { createLogger, transports, format } = require('winston');
-const DailyRotateFile = require('winston-daily-rotate-file');
+const { createLogger, transports, format } = require("winston");
+const DailyRotateFile = require("winston-daily-rotate-file");
 
 const ignorePrivate = format((info) => {
-  if (info.private) { return false; }
+  if (info.private) {
+    return false;
+  }
   return info;
 });
 
@@ -18,21 +20,21 @@ const generateFileOptions = (type) => ({
 module.exports = createLogger({
   format: format.combine(
     ignorePrivate(),
-    format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
-    format.printf((info) => `${info.timestamp} - ${info.level}: ${info.message}`),
+    format.timestamp({ format: "YYYY-MM-DD HH:mm:ss:ms" }),
+    format.printf(
+      (info) => `${info.timestamp} - ${info.level}: ${info.message}`
+    )
   ),
   transports: [
-    new DailyRotateFile(generateFileOptions('error')),
-    new DailyRotateFile(generateFileOptions('info')),
+    new DailyRotateFile(generateFileOptions("error")),
+    new DailyRotateFile(generateFileOptions("info")),
     new transports.Console({
-      level: 'debug',
+      level: "debug",
       handleExceptions: true,
       json: false,
       colorize: true,
     }),
   ],
-  exceptionHandlers: [
-    new DailyRotateFile(generateFileOptions('exceptions')),
-  ],
+  exceptionHandlers: [new DailyRotateFile(generateFileOptions("exceptions"))],
   exitOnError: false,
 });
