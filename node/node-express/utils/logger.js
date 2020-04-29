@@ -1,3 +1,4 @@
+const path = require("path");
 const { createLogger, transports, format } = require("winston");
 const DailyRotateFile = require("winston-daily-rotate-file");
 
@@ -10,7 +11,7 @@ const ignorePrivate = format((info) => {
 
 const generateFileOptions = (type) => ({
   level: type,
-  filename: `./logs/${type}/%DATE%.${type}.log`,
+  filename: path.join("logs", type, `%DATE%.${type}.log`),
   prepend: true,
   json: true,
   maxsize: 5242880,
