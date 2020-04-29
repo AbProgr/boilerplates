@@ -5,12 +5,10 @@ const helmet = require("helmet");
 
 // require our own modules
 const { httpLogger, assignRequestId } = require("./middlewares");
-const { logger, ErrorHandler, handleError } = require("./utils");
+const { ErrorHandler, handleError } = require("./utils");
 const routes = require("./routes");
 
 const app = express();
-const host = "localhost";
-const port = 3000;
 
 // register middlewares with express
 app.use(helmet());
@@ -32,11 +30,4 @@ app.use((err, req, res, next) => {
   next(handleError(err, res));
 });
 
-// start express server
-app.listen(port, host, (err) => {
-  if (err) {
-    logger.error(`An Error occured while starting the server: ${err}`);
-  } else {
-    logger.info(`Server started succesfully at: ${host}:${port}`);
-  }
-});
+module.exports = app;

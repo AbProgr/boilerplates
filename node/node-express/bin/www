@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+const app = require("../app.js");
+const { logger } = require("../utils");
+
+const host = "localhost";
+const port = 3000;
+
+// start express server
+app.listen(port, host, (err) => {
+  if (err) {
+    logger.error(`An Error occurred while starting the server: ${err}`);
+  } else {
+    logger.info(`Server started successfully at: http://${host}:${port}`);
+  }
+});
