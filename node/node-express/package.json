@@ -4,7 +4,7 @@
   "description": "boilerplate for REST API server with node and express",
   "main": "./bin/www",
   "scripts": {
-    "dev": "nodemon ./bin/www",
+    "dev": "NODE_ENV=development nodemon ./bin/www",
     "lint": "eslint *.* --fix",
     "format": "prettier --write . && prettier --check . "
   },
@@ -22,6 +22,7 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
+    "config": "^3.3.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
