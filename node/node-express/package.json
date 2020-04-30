@@ -4,7 +4,9 @@
   "description": "boilerplate for REST API server with node and express",
   "main": "./bin/www",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon ./bin/www",
+    "start": "node ./bin/www",
+    "start:dev": "NODE_ENV=development nodemon ./bin/www",
+    "start:debug": "NODE_ENV=development nodemon --inspect ./bin/www",
     "lint": "eslint *.* --fix",
     "format": "prettier --write . && prettier --check . "
   },
@@ -18,8 +20,8 @@
   "license": "MIT",
   "devDependencies": {
     "@ab.progr/eslint-config-node-extended": "^1.0.3",
-    "@ab.progr/prettier-config": "^1.0.0",
-    "nodemon": "^2.0.2"
+    "@ab.progr/nodemon-config": "^1.0.1",
+    "@ab.progr/prettier-config": "^1.0.2"
   },
   "dependencies": {
     "config": "^3.3.1",
