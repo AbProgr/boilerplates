@@ -9,6 +9,6 @@ logger.stream = {
 };
 
 module.exports = morgan(
-  ":id :method :url :status :response-time ms - :res[content-length]",
+  ":id :remote-addr :method :url :status :response-time ms - :res[content-length]",
   { stream: logger.stream }
 );

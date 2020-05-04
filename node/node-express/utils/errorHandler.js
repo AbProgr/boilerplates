@@ -1,21 +1,31 @@
-class ErrorHandler extends Error {
-  constructor(statusCode, message) {
+const logger = require("./logger");
+
+module.exports = class AppError extends Error {
+  constructor(
+    requestId,
+    ipAddress,
+    message = "Internal Server Error",
+    errorCode = "GENERIC_ERROR"
+  ) {
     super();
-    this.statusCode = statusCode;
+    this.status = "error";
+    this.errorCode = errorCode;
     this.message = message;
+    this.meta = {
+      requestId,
+      ipAddress,
+    };
   }
-}
 
-const handleError = (err, res) => {
-  const { statusCode, message } = err;
-  res.status(statusCode).json({
-    status: "error",
-    statusCode,
-    message,
-  });
-};
-
-module.exports = {
-  ErrorHandler,
-  handleError,
+  handle() {
+    const {
+      errorCode,
+      message,
+      meta: { requestId, ipAddress },
+    } = this;
+    logger.error(
+      `${requestId} | ${ipAddress} | ${errorCode.toUpperCase()} | ${message}`
+    );
+    return this;
+  }
 };
