@@ -15,14 +15,14 @@
     eslint-plugin-prettier ">=3.1.3"
     eslint-plugin-security ">=1.4.0"
 
-"@ab.progr/nodemon-config@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@ab.progr/nodemon-config/-/nodemon-config-1.0.0.tgz#7e00d9d623ddd91672778e4fe2a0d65f1679f883"
-  integrity sha512-qp8MnQ+SO2M/NUF5kG3HzT8DVhrL2HkHRLAgFw2gWAlPQppefVmrhBqF9f/g3FPlkIvG8UMaKx5MJ5hjUn+png==
+"@ab.progr/nodemon-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ab.progr/nodemon-config/-/nodemon-config-1.0.1.tgz#8004ce8e22eac6e30263f61e8d52c79ae9e2db3a"
+  integrity sha512-nM2G0LdnJLkw6sZOEqexCQrKeE0/gh1+9Jeucsjyv2m9sX/adc3dR24X1ks7Hm9vd/9WcPp3QKVOWCUoeTrGGg==
   dependencies:
     nodemon "^2.0.3"
 
-"@ab.progr/prettier-config@^1.0.0":
+"@ab.progr/prettier-config@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@ab.progr/prettier-config/-/prettier-config-1.0.2.tgz#4176b688880db3f5b296cc9d853a21c3677f9d61"
   integrity sha512-y+D4gr2sVNDl9zvgm0qDo4fr8LLy6LGwsHZTy7YWsexwuAHjL0g+MuHaBpthi2dor5dcak6TouyZBh/PE+5CgA==
