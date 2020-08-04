@@ -1,0 +1,8 @@
+{
+  "watch": ["src"],
+  "ext": "ts js json",
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/**/node_modules", "*.test.js", "*.spec.js"],
+  "exec": "ts-node ./src/server.ts",
+  "delay": "3000"
+}

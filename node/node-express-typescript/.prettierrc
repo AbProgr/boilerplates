@@ -1,0 +1,13 @@
+{
+  "tabWidth": 2,
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": { "parser": "json" }
+    }
+  ],
+  "semi": true,
+  "trailingComma": "all",
+  "singleQuote": true
+}
